@@ -1,1 +1,19 @@
-<p>lista-post works!</p>
+<h2>Lista de publicaciones</h2>
+<div>
+    <select class="form-select" id="">
+        <option value="all">Mostrar todas las categorias</option>
+       @for (categoria of categorias; track $index) { <option [value]="categoria">{{categoria}}</option>  } 
+    </select>
+</div>
+<div>
+    <div>
+        <h4>{{post.titulo}}</h4>
+        <img [src]="post.imagen" alt="">
+        <p>{{post.autor}}</p>
+        <p>{{post.texto}}</p>
+        <div class="footer">
+            <p>{{post.categoria}}</p>
+            <p>{{post.fecha}}</p>
+        </div>
+    </div>
+</div>

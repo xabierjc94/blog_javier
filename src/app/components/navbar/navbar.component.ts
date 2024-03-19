@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'nav-bar',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

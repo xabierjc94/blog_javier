@@ -1,1 +1,38 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario"  (ngSubmit)="onSubmit()"  class="mt-5">
+  <div class="mb-3">
+    <label class="form-label">TITULO</label>
+    <input type="text" class="form-control" formControlName="titulo" placeholder="Titulo de la noticia"/>
+   @if (listError('titulo', 'required')) {}
+  </div>
+  <div class="mb-3">
+    <label class="form-label">TEXTO</label>
+    <input type="text" class="form-control" formControlName="texto" placeholder="Texto del blog"/>
+    @if (listError('texto', 'required')) {
+      <p class="error">Es obligatorio</p>
+    }
+  </div>
+  <div class="mb-3">
+    <label class="form-label">AUTOR</label>
+    <input type="text" class="form-control" formControlName="autor" placeholder="Nombre del autor"/>
+    @if (listError('autor', 'required')) {
+      <p class="error">Debes introducir un autor</p>
+    }
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Imagen</label>
+    <input type="text" class="form-control" formControlName="imagen" placeholder=" url de la imagen" />
+    @if (listError('imagen', 'required')) {
+      <p class="error">Donde vas sin la imagen</p>
+    }
+    </div>
+  <div class="mb-3">
+      <label class="form-label">Categoría</label>
+      <select class="form-select" formControlName="categoria"> 
+        @for(categorias of categoria; track $index){
+          <option [value]="categoria">Categoria:{{categoria}}</option>
+        }</select>
+    </div>
+  <input type="submit" value="Enviar" class="btn btn-primary"  [disabled]="!formulario.valid"  />
+</form>
+
+  
