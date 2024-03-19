@@ -1,0 +1,11 @@
+ul{
+    background-color: aquamarine;
+    max-width: auto;
+    max-height: auto;
+}
+button{
+    margin-left: 45px;
+    justify-content:center;
+    text-align: center;
+    border: 2px solid tomato;
+}
